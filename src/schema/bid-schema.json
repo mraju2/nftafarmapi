@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"assetId": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"tokenId": {
+			"type": "string"
+		},
+		"owner": {
+			"type": "string"
+		},
+		"value": {
+			"type": "integer"
+		},
+		"price": {
+			"type": "number"
+		},
+		"priceUnit": {
+			"type": "string",
+			"enum": [
+				"w${BLOCK_CHAIN}",
+				"ALLEY"
+			]
+		},
+		"bidder": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+			  "active",
+			  "cancelled",
+			  "void",
+			  "accepted"
+			]
+		},
+		"date": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"id",
+		"assetId",
+		"token",
+		"tokenId",
+		"owner",
+		"value",
+		"price",
+		"priceUnit",
+		"bidder",
+		"date"
+	  ]
+}

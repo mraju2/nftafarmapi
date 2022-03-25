@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "onSale": {
+        "type": "boolean"
+      },
+      "price": {
+        "type": "number"
+      },
+      "priceUnit": {
+        "type": "string",
+        "enum": [
+          "${BLOCK_CHAIN}",
+          "ALLEY"
+        ]
+      },
+      "sign":{
+          "type":"string"
+      }
+    },
+    "allOf": [
+        {
+            "if":{
+                "properties":{
+                    "onSale":{
+                        "const": true
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                            "onSale",
+                            "price",
+                            "priceUnit",
+                            "sign"
+                        ]
+            }
+        },
+        {
+          "if":{
+              "properties":{
+                  "onSale":{
+                      "const": false
+                  }
+              }
+          },
+          "then": {
+              "required": [
+                          "onSale",
+                          "sign"
+                      ]
+          }
+      }
+    ]
+
+  }

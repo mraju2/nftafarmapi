@@ -1,0 +1,134 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string",
+			"enum": [
+				"buy",
+				"transfer",
+				"cancel",
+				"bid",
+				"order",
+				"mint",
+				"burn"
+			]
+		},
+		"assetId": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"tokenId": {
+			"type": "string"
+		},
+		"owner": {
+			"type": "string"
+		},
+		"owners": {
+			"type": "array",
+			"items": [
+			  {
+				"type": "string"
+			  }
+			]
+		},
+		"value": {
+			"type": "integer"
+		},
+		"price": {
+			"type": "number"
+		},
+		"priceUnit": {
+			"type": "string",
+			"enum": [
+				"${BLOCK_CHAIN}",
+				"ALLEY",
+				"w${BLOCK_CHAIN}"
+			]
+		},
+		"buyer": {
+			"type": "string"
+		},
+		"date": {
+			"type": "string"
+		},
+		"transactionHash": {
+			"type": "string"
+		},
+		"to": {
+			"type": "string"
+		},
+		"from": {
+			"type": "string"
+		},
+		"creator": {
+			"type": "string"
+		},
+		"status": {
+			"type": "string"
+		},
+		"onSaleId": {
+			"type": "string"
+		},
+		"onSale": {
+			"type": "boolean"
+		},
+		"bidder": {
+			"type": "string"
+		},
+		"seller": {
+			"type": "string"
+		},
+		"lastTransactionStatus": {
+			"type": "string"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"lastTransactionStatus": {
+						"const": "success"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"status",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"transactionHash",
+					"value",
+					"onSale",
+					"date",
+					"lastTransactionStatus"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"lastTransactionStatus": {
+						"const": "failed"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"assetId",
+					"owners",
+					"status",
+					"lastTransactionStatus"
+				]
+			}
+		}
+	]
+}

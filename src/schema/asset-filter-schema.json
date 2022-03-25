@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "filterBy": {
+      "type": "string",
+      "enum": [
+        "todaysAssets",
+        "recentlyAdded",
+        "onSale",
+        "currency",
+        "mostLiked",
+        "mostViewed",
+        "salePrice",
+        "bidPrice",
+        "verifiedArtist"
+      ]
+    },
+    "onSale": {
+      "type": "boolean"
+    },
+    "sortAssending": {
+      "type": "boolean"
+    },
+    "priceUnit": {
+      "type": "string",
+      "enum": [
+        "${BLOCK_CHAIN}",
+        "ALLEY",
+        "w${BLOCK_CHAIN}"
+      ]
+    }
+  },
+  "required": [
+    "filterBy"
+  ]
+}

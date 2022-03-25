@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "assetId":{
+            "type":"string"
+        },
+        "price":{
+            "type":"number"
+        },
+        "priceUnit":{
+            "type":"string",
+            "enum": [
+                "ALLEY",
+                "w${BLOCK_CHAIN}"
+            ]
+        },
+        "bidder": {
+            "type": "string"
+        },
+        "sign":{
+            "type":"string"
+            }
+    },
+    "required": [
+        "assetId",
+        "price",
+        "priceUnit",
+        "bidder",
+        "sign"
+    ]
+
+}

@@ -1,0 +1,252 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string",
+			"enum": [
+				"buy",
+				"transfer",
+				"cancel",
+				"bid",
+				"order",
+				"mint",
+				"burn"
+			]
+		},
+		"assetId": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"tokenId": {
+			"type": "string"
+		},
+		"owner": {
+			"type": "string"
+		},
+		"value": {
+			"type": "integer"
+		},
+		"price": {
+			"type": "number"
+		},
+		"priceUnit": {
+			"type": "string",
+			"enum": [
+				"${BLOCK_CHAIN}",
+				"ALLEY",
+				"w${BLOCK_CHAIN}"
+			]
+		},
+		"serviceShare": {
+			"type": "number"
+		},
+		"creatorShare": {
+			"type": "number"
+		},
+		"ownerShare": {
+			"type": "number"
+		},
+		"buyer": {
+			"type": "string"
+		},
+		"seller": {
+			"type": "string"
+		},
+		"date": {
+			"type": "string"
+		},
+		"transactionHash": {
+			"type": "string"
+		},
+		"to": {
+			"type": "string"
+		},
+		"from": {
+			"type": "string"
+		},
+		"creator": {
+			"type": "string"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "buy"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"value",
+					"creator",
+					"price",
+					"priceUnit",
+					"buyer",
+					"date",
+					"transactionHash",
+					"from",
+					"to"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "transfer"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"value",
+					"from",
+					"date",
+					"transactionHash",
+					"from",
+					"to"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "cancel"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"date",
+					"transactionHash"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "bid"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"value",
+					"price",
+					"priceUnit",
+					"buyer",
+					"seller",
+					"transactionHash",
+					"date"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "order"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"value",
+					"price",
+					"priceUnit",
+					"date"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "mint"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"creator",
+					"value",
+					"date",
+					"transactionHash",
+					"from",
+					"to"
+				]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "burn"
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"id",
+					"type",
+					"assetId",
+					"token",
+					"tokenId",
+					"owner",
+					"creator",
+					"value",
+					"date",
+					"transactionHash",
+					"from",
+					"to"
+				]
+			}
+		}
+	]
+}

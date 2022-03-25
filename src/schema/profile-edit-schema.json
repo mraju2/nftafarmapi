@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "userName": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "twitterId": {
+        "type": "string"
+      },
+      "instagramId":{
+        "type":"string"
+      },
+      "ownedSite": {
+        "type": "string"
+      },
+      "sign": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "userName"
+    ]
+  }

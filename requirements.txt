@@ -1,0 +1,14 @@
+flask-cors==3.0.10
+flask-restx==0.1.1
+jsonref==0.2
+jsonschema==3.2.0
+pymongo==3.11.3
+dnspython==2.1.0
+requests==2.25.1
+passlib==1.7.2
+Flask-JWT-Extended==3.24.1
+urllib3==1.26.4
+requests-ntlm==1.1.0
+xlrd==2.0.1
+requests-credssp==1.1.1
+web3==5.19.0

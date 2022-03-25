@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "onSale":{
+      "type":"boolean"
+    },
+    "collectionName": {
+      "type": "string"
+    },
+    "basePrice": {
+      "type": "number"
+    },
+    "priceUnit":{
+      "type":"string",
+      "enum": [
+        "${BLOCK_CHAIN}",
+        "ALLEY",
+        "w${BLOCK_CHAIN}"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "collectionLogo":{
+      "type":"string"
+    },
+    "collectionBanner":{
+      "type":"string"
+    }
+  },
+  "required": [
+    "onSale",
+    "collectionName",
+    "startDate"
+]
+  
+}
