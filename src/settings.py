@@ -8,9 +8,9 @@ API_UNPROTECTED = os.environ.get('API_UNPROTECTED', "TRUE")
 TOKEN_EXPIRATION_TIME = os.environ.get('TOKEN_EXPIRATION_TIME', 1)
 # Database settings
 DB_PORT = os.environ.get('DB_PORT', 27017)
-DB_HOST = os.environ.get('DB_HOST','my-mongodb') #'localhost' 'my-mongodb'
-DB_USER = os.environ.get('DB_USER', 'admin') # 'root'
-DB_PASSWORD = os.environ.get('DB_PASSWORD', 'password')
+DB_HOST = os.environ.get('DB_HOST','nft-farm') #'localhost' 'my-mongodb'
+DB_USER = os.environ.get('DB_USER', 'metalauncher') # 'root'
+DB_PASSWORD = os.environ.get('DB_PASSWORD', 'Tsip292015')
 USE_MONGO = os.environ.get('USE_MONGO', 'True')
 ERC721_ADDRESS = os.environ.get('ERC721_ADDRESS', '0x4b8D4D4B3ea6927eB438002f8CC4713315118aAf')
 BLOCK_CHAIN = os.environ.get('BLOCK_CHAIN',"BNB")

@@ -17,23 +17,23 @@ class DBUtil:
     db_port = settings.DB_PORT
     db_auth_mech = 'SCRAM-SHA-1'
 
-    def __init__(self, db_name=BLOCK_DB_NAME):
-        self.client = MongoClient(
-            self.db_host,
-            port=self.db_port,
-            username=self.db_user,
-            password=self.db_password,
-            authMechanism=self.db_auth_mech
-        )
-        self.db_client = self.client[db_name]
-
-    # def __init__(self, db_name='nft-alley'):
-    #     username = urllib.parse.quote_plus(self.db_user)
-    #     password = urllib.parse.quote_plus(self.db_password)
+    # def __init__(self, db_name=BLOCK_DB_NAME):
     #     self.client = MongoClient(
-    #         f'mongodb+srv://{username}:{password}@cluster0.jzsno.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    #         self.db_host,
+    #         port=self.db_port,
+    #         username=self.db_user,
+    #         password=self.db_password,
+    #         authMechanism=self.db_auth_mech
     #     )
     #     self.db_client = self.client[db_name]
+
+    def __init__(self, db_name='nft-alley'):
+        username = urllib.parse.quote_plus(self.db_user)
+        password = urllib.parse.quote_plus(self.db_password)
+        self.client = MongoClient(
+            f'mongodb+srv://{username}:{password}@cluster0.zsslr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+        )
+        self.db_client = self.client[db_name]
 
     def get_db(self):
         """
